@@ -3,6 +3,8 @@ services:
   grafana:
     image: grafana/grafana
     container_name: grafana
+    env_file:
+    - 'env.grafana'
     restart: always
     ports:
       - 3000:3000
