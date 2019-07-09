@@ -34,7 +34,14 @@ services:
       - monitoring
     volumes:
       - nodered-volume:/data
-
+  unifi:
+    image: golift/unifi-poller
+    container_name: unifi-poller
+    restart: always
+    networks:
+      - monitoring
+    volumes: 
+      - ./unifi-poller/up.conf:/etc/unifi-poller/up.conf
 networks:
   monitoring:
 volumes:
