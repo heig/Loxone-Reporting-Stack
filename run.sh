@@ -7,13 +7,11 @@ echo
 echo "InfluxDB is available in NodeRed as 'influxdb'"
 echo 
 echo "##########################################################"
-read -p "Press enter to continue"
+read -p "Press enter to continue and bring up docker"
 
 docker-compose up -d
 
-echo "Grafana: http://127.0.0.1:3000 - admin/admin"
-echo "Nodered: http://127.0.0.1:1880"
-
+echo
 echo "Check and create loxone and unifi Database"
 curl -G http://localhost:8086/query?pretty=true --data-urlencode "db=glances" --data-urlencode "q=SHOW DATABASES" | grep loxone > /dev/null
 unifi=$?
@@ -22,6 +20,7 @@ if [ $unifi -ne "0" ]; then
 	echo "create loxone DB"
 	curl -XPOST 'http://localhost:8086/query' --data-urlencode 'q=CREATE DATABASE loxone'
 fi
+echo 
 curl -G http://localhost:8086/query?pretty=true --data-urlencode "db=glances" --data-urlencode "q=SHOW DATABASES" | grep unifi > /dev/null
 loxone=$?
 echo $loxone
@@ -30,6 +29,7 @@ if [ $loxone -ne "0" ]; then
 	curl -XPOST 'http://localhost:8086/query' --data-urlencode 'q=CREATE DATABASE unifi'
 fi
 
+echo
 echo
 echo "##########################################################"
 echo "Current database list"
