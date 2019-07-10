@@ -42,6 +42,14 @@ services:
       - monitoring
     volumes: 
       - ./unifi-poller/up.conf:/etc/unifi-poller/up.conf
+  telegraf-snmp:
+    image: inetsix/telegraf-snmp
+    container_name: telegraf-snmp
+    restart: always
+    networks:
+      - monitoring
+    volumes: 
+      - ./telegraf-snmp/telegraf.config:/etc/telegraf/telegraf.conf
 networks:
   monitoring:
 volumes:

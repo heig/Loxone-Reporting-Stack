@@ -28,6 +28,14 @@ if [ $loxone -ne "0" ]; then
 	echo "create unifi DB"
 	curl -XPOST 'http://localhost:8086/query' --data-urlencode 'q=CREATE DATABASE unifi'
 fi
+echo 
+curl -G http://localhost:8086/query?pretty=true --data-urlencode "db=glances" --data-urlencode "q=SHOW DATABASES" | grep synology > /dev/null
+synology=$?
+echo $synology
+if [ $synology -ne "0" ]; then
+	echo "create synology DB"
+	curl -XPOST 'http://localhost:8086/query' --data-urlencode 'q=CREATE DATABASE synology'
+fi
 
 echo
 echo
