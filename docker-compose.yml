@@ -35,7 +35,7 @@ services:
     volumes:
       - nodered-volume:/data
   unifi:
-    image: golift/unifi-poller
+    image: golift/unifi-poller:stable
     container_name: unifi-poller
     restart: always
     networks:
