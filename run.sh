@@ -36,6 +36,14 @@ if [ $synology -ne "0" ]; then
 	echo "create synology DB"
 	curl -XPOST 'http://localhost:8086/query' --data-urlencode 'q=CREATE DATABASE synology'
 fi
+echo 
+curl -G http://localhost:8086/query?pretty=true --data-urlencode "db=glances" --data-urlencode "q=SHOW DATABASES" | grep cadvisor > /dev/null
+cadvisor=$?
+echo $cadvisor
+if [ $cadvisor -ne "0" ]; then
+	echo "create cadvisor DB"
+	curl -XPOST 'http://localhost:8086/query' --data-urlencode 'q=CREATE DATABASE cadvisor'
+fi
 
 echo
 echo
