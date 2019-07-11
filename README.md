@@ -15,9 +15,11 @@ This project is a docker based stack of tools to provide external reporting of L
   * node-red-contrib-influxdb 
 * InfluxDB (as database)
 * unifi-poller (to get information of Ubiquiti Unifi Networks)
+* telegraf-snmp (to get SNMP Information from Synology NAS and other devices)
+* cadvisor (to monitor Docker envionment)
 
 ## Setup
-Start run.sh to setup the docker containers. 
+Start run.sh to setup the docker containers and create influx databases. 
 Grafana will be availiable at port 3000 and NodeRed at 1880. 
 
 `$ /bin/bash run.sh`
@@ -25,6 +27,9 @@ Grafana will be availiable at port 3000 and NodeRed at 1880.
 
 ### Unifi Poller
 Change preferences in *unifi-poller/up.conf* to connect to your Unifi Controller. For further information see [Unifi Poller](https://github.com/davidnewhall/unifi-poller)
+
+### telegraf-snmp
+Setup your Synology IP Address in *telegraf-snmp/telegraf.config*
 
 
 ## URLs
