@@ -24,6 +24,19 @@ Grafana will be availiable at port 3000 and NodeRed at 1880.
 
 `$ /bin/bash run.sh`
 
+After the first launch, all containers will start automatically at system startup. 
+
+### Grafana
+
+Setup the Datasource in Grafana for Influx DB: 
+
+URL: http://influxdb:8086
+
+![Datasource](http://cdn.andreseck.de/github_loxreport/InfluxDB_Loxone__Settings_-_Grafana.png | width=100 )
+
+### Node Red
+
+![InfluxDB](http://cdn.andreseck.de/github_loxreport/NodeRed_InfluxDB.png | width=100 )
 
 ### Unifi Poller
 Change preferences in *unifi-poller/up.conf* to connect to your Unifi Controller. For further information see [Unifi Poller](https://github.com/davidnewhall/unifi-poller)
