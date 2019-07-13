@@ -32,11 +32,11 @@ Setup the Datasource in Grafana for Influx DB:
 
 URL: http://influxdb:8086
 
-![Datasource](http://cdn.andreseck.de/github_loxreport/InfluxDB_Loxone__Settings_-_Grafana.png )
+![Datasource](http://cdn.andreseck.de/github_loxreport/InfluxDB_Loxone__Settings_-_Grafana.jpg )
 
 ### Node Red
 
-![InfluxDB](http://cdn.andreseck.de/github_loxreport/NodeRed_InfluxDB.png )
+![InfluxDB](http://cdn.andreseck.de/github_loxreport/NodeRed_InfluxDB.jpg )
 
 ### Unifi Poller
 Change preferences in *unifi-poller/up.conf* to connect to your Unifi Controller. For further information see [Unifi Poller](https://github.com/davidnewhall/unifi-poller)
