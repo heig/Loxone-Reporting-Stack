@@ -36,6 +36,8 @@ URL: http://influxdb:8086
 
 ### Node Red
 
+Setup InfluxDB connection in Node Red: 
+
 ![InfluxDB](http://cdn.andreseck.de/github_loxreport/NodeRed_InfluxDB.jpg )
 
 ### Unifi Poller
